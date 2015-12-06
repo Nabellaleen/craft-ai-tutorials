@@ -12,22 +12,59 @@
       {
         "activated": true,
         "metadata": {
-          "label": "Action 1"
+          "label": ""
         },
-        "properties": {
-          "name": "Say",
-          "inputParams": [
-            {
-              "key": "message",
-              "type": "string",
-              "value": "Hello World!"
-            }
-          ],
-          "outputParams": []
-        },
-        "children": [],
-        "id": "f656b2de-7143-4408-bd6a-d88347d81e8c",
-        "type": "action"
+        "properties": {},
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": "Ask name"
+            },
+            "properties": {
+              "name": "Prompt",
+              "inputParams": [
+                {
+                  "key": "message",
+                  "type": "string",
+                  "value": "Please enter the message you want to display"
+                }
+              ],
+              "outputParams": [
+                {
+                  "key": "answer",
+                  "type": "entityKnowledge",
+                  "value": "answer"
+                }
+              ]
+            },
+            "children": [],
+            "id": "de193c2e-82d6-4f90-bf19-6d019b254c8d",
+            "type": "action"
+          },
+          {
+            "activated": true,
+            "metadata": {
+              "label": "Say hello"
+            },
+            "properties": {
+              "name": "Say",
+              "inputParams": [
+                {
+                  "key": "message",
+                  "type": "entityKnowledge",
+                  "value": "answer"
+                }
+              ],
+              "outputParams": []
+            },
+            "children": [],
+            "id": "f656b2de-7143-4408-bd6a-d88347d81e8c",
+            "type": "action"
+          }
+        ],
+        "id": "73945db8-5932-41f4-8e17-3091f7b49aaf",
+        "type": "sequence"
       }
     ],
     "id": "e040b3cc-1095-41bb-8f42-549af58d0286"
